@@ -1,0 +1,21 @@
+<?php
+
+/** @var $viewModel OmniPro\CategoryAttribute\ViewModel\CategoryList */
+
+$viewModel = $block->getCategoryList();
+$categories = $viewModel->getList();
+
+?>
+<div class="home-cat-wrap">
+    <div class="category">
+        <?php foreach ($categories as $category): ?>
+            <div class="cat-item">
+                <div class="cat-img">
+                    <img src="<?= $category['image'] ? $category['image'] : "http://demo.link" ?>" alt="">
+                </div>
+                <h4><a href="#"><?= $category['name'] ?></a></h4>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <div class="view-more"><a class="action primary">View More Categories</a></div>
+</div>

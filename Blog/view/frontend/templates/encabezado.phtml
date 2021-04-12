@@ -1,0 +1,11 @@
+<?php
+/** @var \OmniPro\Blog\Model\BlogViewModel $viewModel */
+$viewModel = $block->getViewModel();
+?>
+
+<div class="container">
+<div class="encabezado">
+    <h1>Cambio</h1>
+    <h1 class="title" >My spectacular blog!!</h1>    
+    <p> <?= $viewModel->getInfo(); ?> </p>
+</div>

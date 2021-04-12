@@ -1,0 +1,19 @@
+<?php
+/** @var \OmniPro\Blog\Block\Template $block */
+?>
+
+<div class="nuevopost">
+    <h3>New blog post</h3>  
+    <form class="formulariopost" action="<?= $block->getUrl('blogview/index/save') ?>" method="post">
+        <div class="campospost">
+            <input type="text" name="titulo" placeholder="My post title">
+            <textarea class="contenidopost" name="contenido" value="Here all my important post text!"></textarea>
+            <input type="email" name="email" placeholder="Email Address">
+            <input type="text" name="img" placeholder="Imagen">
+            <!--<input type="file" name="">-->
+        </div>
+        <div class="botonguardar">
+            <button type="submit">Save post</button>
+        </div>
+    </form>
+</div>
