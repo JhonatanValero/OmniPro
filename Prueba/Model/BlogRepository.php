@@ -1,23 +1,27 @@
 <?php
 namespace OmniPro\Prueba\Model;
 
+use OmniPro\Prueba\Api\BlogRepositoryInterface;
 use OmniPro\Prueba\Api\Data\BlogInterface;
+use OmniPro\Prueba\Api\Data\BlogInterfaceFactory;
 use OmniPro\Prueba\Api\Data\BlogSearchResultInterface;
+use OmniPro\Prueba\Api\Data\BlogSearchResultInterfaceFactory;
 use \OmniPro\Prueba\Model\ResourceModel\Blog\Collection;
 use Magento\Framework\Api\SearchCriteriaInterface;
 use Magento\Framework\Api\SortOrder;
 use Magento\Framework\Exception\NoSuchEntityException;
+use OmniPro\Prueba\Model\ResourceModel\Blog\CollectionFactory;
 
-class BlogRepository implements \OmniPro\Prueba\Api\BlogRepositoryInterface
+class BlogRepository implements BlogRepositoryInterface
 {
     protected $_blogInterfaceFactory;
     protected $_blogCollectionFactory;
     protected $_blogSearchResultFactory;
 
     public function __construct(
-        \OmniPro\Prueba\Api\Data\BlogInterfaceFactory $blogInterfaceFactory,
-        \OmniPro\Prueba\Model\ResourceModel\Blog\CollectionFactory $blogCollectionFactory,
-        \OmniPro\Prueba\Api\Data\BlogSearchResultInterfaceFactory $blogSearchResultInterfaceFactory
+        BlogInterfaceFactory $blogInterfaceFactory,
+        CollectionFactory $blogCollectionFactory,
+        BlogSearchResultInterfaceFactory $blogSearchResultInterfaceFactory
     )
     {
         $this->_blogInterfaceFactory = $blogInterfaceFactory;
@@ -49,16 +53,16 @@ class BlogRepository implements \OmniPro\Prueba\Api\BlogRepositoryInterface
     public function getList(SearchCriteriaInterface $searchCriteria)
     {
         $collection = $this->_blogCollectionFactory->create();
- 
+
         $this->addFiltersToCollection($searchCriteria, $collection);
         $this->addSortOrdersToCollection($searchCriteria, $collection);
         $this->addPagingToCollection($searchCriteria, $collection);
- 
+
         $collection->load();
- 
+
         return $this->buildSearchResult($searchCriteria, $collection);
     }
- 
+
     private function addFiltersToCollection(SearchCriteriaInterface $searchCriteria, Collection $collection)
     {
         foreach ($searchCriteria->getFilterGroups() as $filterGroup) {
@@ -70,7 +74,7 @@ class BlogRepository implements \OmniPro\Prueba\Api\BlogRepositoryInterface
             $collection->addFieldToFilter($fields, $conditions);
         }
     }
- 
+
     private function addSortOrdersToCollection(SearchCriteriaInterface $searchCriteria, Collection $collection)
     {
         foreach ((array) $searchCriteria->getSortOrders() as $sortOrder) {
@@ -78,21 +82,21 @@ class BlogRepository implements \OmniPro\Prueba\Api\BlogRepositoryInterface
             $collection->addOrder($sortOrder->getField(), $direction);
         }
     }
- 
+
     private function addPagingToCollection(SearchCriteriaInterface $searchCriteria, Collection $collection)
     {
         $collection->setPageSize($searchCriteria->getPageSize());
         $collection->setCurPage($searchCriteria->getCurrentPage());
     }
- 
+
     private function buildSearchResult(SearchCriteriaInterface $searchCriteria, Collection $collection)
     {
         $searchResults = $this->_blogSearchResultFactory->create();
- 
+
         $searchResults->setSearchCriteria($searchCriteria);
         $searchResults->setItems($collection->getItems());
         $searchResults->setTotalCount($collection->getSize());
- 
+
         return $searchResults;
     }
 }

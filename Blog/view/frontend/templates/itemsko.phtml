@@ -1,0 +1,22 @@
+<?php
+/** @var \OmniPro\Blog\Block\Template $block */
+?>
+
+<div id="blog" data-bind="scope: 'blogComponent'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+</div>
+
+<!-- Interpretado mediante RequireJs -->
+<script type="text/x-magento-init"> 
+{
+    "#blog": {
+        "Magento_Ui/js/core/app": {
+            "components": {
+                "blogComponent": {
+                    "component": "OmniPro_Blog/js/blogItems"
+                }
+            }
+        }
+    }
+}
+</script>

@@ -1,19 +1,24 @@
 <?php
 namespace OmniPro\Prueba\Controller\Bootcamp;
 
-class Prueba extends \Magento\Framework\App\Action\Action
+use Magento\Framework\App\Action\Action;
+use Magento\Framework\App\Action\Context;
+use Magento\Framework\Controller\ResultInterface;
+use Magento\Framework\View\Result\PageFactory;
+
+class Prueba extends Action
 {
     /**
-     * @var \Magento\Framework\View\Result\PageFactory
+     * @var PageFactory
      */
     protected $_pageFactory;
 
     /**
-     * @param \Magento\Framework\App\Action\Context $context
+     * @param Context $context
      */
     public function __construct(
-       \Magento\Framework\App\Action\Context $context,
-       \Magento\Framework\View\Result\PageFactory $pageFactory
+       Context $context,
+       PageFactory $pageFactory
     )
     {
         $this->_pageFactory = $pageFactory;
@@ -22,7 +27,7 @@ class Prueba extends \Magento\Framework\App\Action\Action
     /**
      * View page action
      *
-     * @return \Magento\Framework\Controller\ResultInterface
+     * @return ResultInterface
      */
     public function execute()
     {

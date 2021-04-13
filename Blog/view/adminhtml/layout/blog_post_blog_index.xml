@@ -2,8 +2,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <block name="OmniPro_Blog_Name" template="OmniPro_Blog::index.phtml" />
-            <uiComponent name="omnipro_blog_post" />
+            <uiComponent name="omnipro_blog_post"/>
         </referenceContainer>
     </body>
 </page>
