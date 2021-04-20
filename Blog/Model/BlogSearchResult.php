@@ -3,7 +3,7 @@ namespace OmniPro\Blog\Model;
 
 use Magento\Framework\Api\SearchResults;
 
-class BlogSearchResult extends SearchResults implements \OmniPro\Prueba\Api\Data\BlogSearchResultInterface
+class BlogSearchResult extends SearchResults implements \OmniPro\Blog\Api\Data\BlogSearchResultInterface
 {
 
 }

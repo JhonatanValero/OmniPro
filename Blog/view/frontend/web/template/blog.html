@@ -1,1 +1,49 @@
-<h1>Complemento funcionando</h1>
+<div class="container">
+    <div class="encabezado">
+        <h1 class="title">My spectacular blog!!</h1>
+        <p data-bind="text:"></p>
+    </div>
+    <div class="nuevopost">
+        <h3>New blog post</h3>
+        <form class="formulariopost" action="" method="post" data-bind="submit: setBlogs">
+            <div class="campospost">
+                <input type="text" name="titulo" placeholder="My post title" data-bind="value: title">
+                <textarea class="contenidopost" name="contenido" value="Here all my important post text!" data-bind="value: content"></textarea>
+                <input type="email" name="email" placeholder="Email Address" data-bind="value: email">
+                <input type="text" name="img" placeholder="Imagen" data-bind="value: img">
+                <!--<input type="file" name="">-->
+            </div>
+            <div class="botonguardar">
+                <button type="submit" title="Submit" class="action submit primary">
+                    <span>Save Post</span>
+                </button>
+            </div>
+        </form>
+    </div>
+    <!--
+    <div>
+        <div data-bind="foreach: blogs">
+            <h3 data-bind="text: title"></h3>
+            <p data-bind="text: img"></p>
+            <p data-bind="text: content"></p>
+        </div>
+    </div>
+    -->
+    <div class="listado-post">
+        <div class="post" data-bind="foreach: blogs">
+            <div class="seccion-a">
+                <p class="post-titulo" data-bind="text: title"></p>
+                <p class="post-fecha">dd/mm/yyyy</p>
+            </div>
+            <div class="seccion-b">
+                <p class="post-imagen" data-bind="text: img"></p>
+                <p class="post-contenido" data-bind="text: content"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h1 class="titulo-componente">Complemento funcionando</h1>
+<h1 data-bind="text: textoPrueba"></h1> <!-- Llamar variable definida en el componente-->
+<h1 data-bind="text: variable01"></h1> <!-- Llamar variable definida en el componente-->
+<button data-bind="click: cambiarVariable01">Click</button> <!--Llamar funcion definida en el componente-->

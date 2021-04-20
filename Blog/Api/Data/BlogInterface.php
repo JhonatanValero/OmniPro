@@ -1,7 +1,6 @@
 <?php
 namespace OmniPro\Blog\Api\Data;
-
-interface BlogInterface
+interface BlogInterface extends \Magento\Framework\Api\ExtensibleDataInterface
 {
     /**
      * Return ID
@@ -77,6 +76,21 @@ interface BlogInterface
      * @return string
      */
     public function getImg();
+
+    /**
+     * Retrieve existing extension attributes object or create a new one.
+     *
+     * @return \OmniPro\Blog\Api\Data\BlogExtensionInterface|null
+     */
+    public function getExtensionAttributes();
+
+    /**
+     * Set an extension attributes object.
+     *
+     * @param \OmniPro\Blog\Api\Data\BlogExtensionInterface $extensionAttributes
+     * @return $this
+     */
+    public function setExtensionAttributes(\OmniPro\Blog\Api\Data\BlogExtensionInterface $extensionAttributes);
 }
 
 

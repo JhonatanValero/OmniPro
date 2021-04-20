@@ -2,7 +2,7 @@
 namespace OmniPro\Blog\Api;
 
 use \OmniPro\Blog\Api\Data\BlogInterface;
-use \OmniPro\Prueba\Api\Data\BlogSearchResultInterface;
+use \OmniPro\Blog\Api\Data\BlogSearchResultInterface;
 
 interface BlogRepositoryInterface
 {

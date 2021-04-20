@@ -1,10 +1,11 @@
 <?php
 namespace OmniPro\Blog\Controller\Adminhtml\Blog;
-class Index extends \Magento\Backend\App\Action
-{
-    const ADMIN_RESOURCE = 'OmniPro_Blog::blog_list';
 
-    const PAGE_TITLE = 'Blog';
+class NewPost extends \Magento\Backend\App\Action
+{
+    const ADMIN_RESOURCE = 'OmniPro_Blog::newpost';
+
+    const PAGE_TITLE = 'New Post';
 
     /**
      * @var \Magento\Framework\View\Result\PageFactory

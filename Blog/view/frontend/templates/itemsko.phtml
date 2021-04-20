@@ -7,16 +7,10 @@
 </div>
 
 <!-- Interpretado mediante RequireJs -->
-<script type="text/x-magento-init"> 
+<script type="text/x-magento-init">
 {
     "#blog": {
-        "Magento_Ui/js/core/app": {
-            "components": {
-                "blogComponent": {
-                    "component": "OmniPro_Blog/js/blogItems"
-                }
-            }
-        }
+        "Magento_Ui/js/core/app": <?= $block->getJsLayout() ?>
     }
 }
 </script>

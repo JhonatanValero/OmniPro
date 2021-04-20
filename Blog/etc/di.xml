@@ -8,6 +8,7 @@
         <arguments>
             <argument name="collections" xsi:type="array">
                 <item name="omnipro_blog_post_data_source" xsi:type="string">OmniPro\Blog\Model\ResourceModel\Blog\Grid\Collection</item>
+                <item name="omnipro_blog_form_data_source" xsi:type="string">OmniPro\Blog\Model\ResourceModel\Blog\Grid\Collection</item>
             </argument>
         </arguments>
     </type>
@@ -17,4 +18,7 @@
             <argument name="resourceModel" xsi:type="string">OmniPro\Blog\Model\ResourceModel\Blog</argument>
         </arguments>
     </virtualType>
+    <type name="OmniPro\Blog\Api\BlogRepositoryInterface">
+        <plugin name="omnipro_blog_repository_plugin" type="OmniPro\Blog\Plugin\BlogRepositoryPlugin" sortOrder="1" disabled="false"/>
+    </type>
 </config>
