@@ -1,0 +1,16 @@
+{
+    "omnipro_blog03": {
+        "column": {
+            "omniproBlog_id": true,
+            "omniproBlog_titulo": true,
+            "omniproBlog_urlimagen": true,
+            "omniproBlog_emailAutor": true,
+            "omniproBlog_contenido": true,
+            "omniproBlog_creacionFec": true,
+            "omniproBlog_actualizacionFec": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
