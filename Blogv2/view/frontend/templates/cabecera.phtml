@@ -1,0 +1,12 @@
+<?php
+/** @var \OmniPro\Blogv2\Block\Template $block */
+
+$info = $block->getViewModel(); // Acceso a todas las funciones publicas del view Model - get<NAME VIEW MODEL>
+
+?>
+
+<div class="container">
+<div class="encabezado">
+    <h1 class="title" >My spectacular blog!!</h1>    
+    <p> <?= $info->getInfo(); ?> </p>
+</div>

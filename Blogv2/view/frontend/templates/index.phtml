@@ -1,7 +1,11 @@
 <?php
 /** @var \Magento\Framework\View\Element\Template $block */
+
+$info = $block->getViewModel(); // Acceso a todas las funciones publicas del view Model - get<NAME VIEW MODEL>
+
 ?>
 
 <div>
     <h1>Blog v2 - Inicio</h1>
+    <?= $info->getInfo() ?>
 </div>

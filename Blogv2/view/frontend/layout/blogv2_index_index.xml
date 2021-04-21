@@ -2,7 +2,21 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <block name="OmniPro_Blogv2_Name" template="OmniPro_Blogv2::index.phtml" />
+            <block name="OmniPro_Blogv2_Cabecera" template="OmniPro_Blogv2::cabecera.phtml">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">OmniPro\Blogv2\ViewModel\BlogViewModel</argument>
+                </arguments>
+            </block>
+            <block name="OmniPro_Blogv2_Formulario" template="OmniPro_Blogv2::formulario.phtml">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">OmniPro\Blogv2\ViewModel\BlogViewModel</argument>
+                </arguments>
+            </block>
+            <block name="OmniPro_Blogv2_ListaPost" template="OmniPro_Blogv2::listapost.phtml">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">OmniPro\Blogv2\ViewModel\BlogViewModel</argument>
+                </arguments>
+            </block>
         </referenceContainer>
     </body>
 </page>
