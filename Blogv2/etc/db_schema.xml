@@ -3,7 +3,7 @@
     <table name="omnipro_blog03" resource="default" engine="innodb" comment="Blog, Reto 01 Bootcamp">
         <column xsi:type="int" name="omniproBlog_id" padding="5" unsigned="false" nullable="true" identity="true" comment="ID Post agregado"/>
         <column xsi:type="varchar" name="omniproBlog_titulo" length="50" nullable="false" comment="Titulo del post" />
-        <column xsi:type="blob" name="omniproBlog_urlimagen" nullable="false" comment="URL Imagen asociada al post" />
+        <column xsi:type="varchar" name="omniproBlog_urlimagen" nullable="false" comment="URL Imagen asociada al post" />
         <column xsi:type="varchar" name="omniproBlog_emailAutor" length="30" nullable="false" comment="Email dl aturo del post" />
         <column xsi:type="varchar" name="omniproBlog_contenido" length="300" nullable="false" comment="Conenido del post" />
         <column xsi:type="timestamp" name="omniproBlog_creacionFec" on_update="false" nullable="true" comment="Create at"/>
